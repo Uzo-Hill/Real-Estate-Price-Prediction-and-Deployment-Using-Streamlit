@@ -3,8 +3,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-import matplotlib.pyplot as plt  # Added missing import
-from PIL import Image  # For adding images if needed
 
 # Set page configuration
 st.set_page_config(
@@ -35,98 +33,73 @@ This model uses Linear Regression and considers three main factors that influenc
 # Create input fields in the sidebar
 st.sidebar.header("Input Property Features")
 
-# Input fields for the three features
 distance_to_mrt = st.sidebar.number_input(
     "Distance to Nearest MRT Station (meters)",
     min_value=0.0,
     max_value=5000.0,
-    value=500.0,
-    help="Enter distance in meters"
+    value=500.0
 )
 
 num_convenience_stores = st.sidebar.number_input(
     "Number of Convenience Stores Nearby",
     min_value=0,
     max_value=20,
-    value=5,
-    help="Number of convenience stores in the vicinity"
+    value=5
 )
 
 distance_to_center = st.sidebar.number_input(
     "Distance to City Center (km)",
     min_value=0.0,
     max_value=20.0,
-    value=0.05,
-    help="Distance to Taipei City Center in kilometers"
+    value=0.05
 )
 
-# Create a button for prediction
 predict_button = st.sidebar.button("Predict Price", type="primary")
 
-# Main content area
 if predict_button:
-    # Create input array in the exact same order as during training
     input_data = np.array([[distance_to_mrt, num_convenience_stores, distance_to_center]])
-    
-    # Scale the input using the same scaler from training
     input_scaled = scaler.transform(input_data)
-    
-    # Make prediction
     prediction = model.predict(input_scaled)
     
-    # Display results
     st.success("### Prediction Results")
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.metric("Predicted Price per Unit Area", f"${prediction[0]:.2f}")
-        
-        # Show input summary
         st.write("**Input Summary:**")
         st.write(f"- Distance to MRT: {distance_to_mrt} meters")
         st.write(f"- Convenience Stores: {num_convenience_stores}")
         st.write(f"- Distance to Center: {distance_to_center} km")
     
     with col2:
-        # Show feature importance insights
         st.write("**How Features Affect Price:**")
         st.write("📍 **Closer to MRT** → Higher Price")
         st.write("🏪 **More Stores** → Higher Price")  
         st.write("🏙️ **Closer to Center** → Higher Price")
 
-    # Feature Importance Visualization (MOVED INSIDE the predict_button condition)
+    # SIMPLE FEATURE IMPORTANCE USING STREAMLIT NATIVE CHART
     st.markdown("---")
     st.subheader("📊 Feature Importance Analysis")
-
-    # Get feature coefficients
+    
     features = ['Distance to MRT', 'Convenience Stores', 'Distance to Center']
     coefficients = model.coef_
+    
+    # Create a simple bar chart using Streamlit's native bar_chart
+    importance_df = pd.DataFrame({
+        'Feature': features,
+        'Impact on Price': coefficients
+    })
+    
+    st.bar_chart(importance_df.set_index('Feature'))
+    
+    # Show the exact coefficients
+    st.write("**Exact Impact Values:**")
+    for feature, coef in zip(features, coefficients):
+        impact = "Increases" if coef > 0 else "Decreases"
+        st.write(f"- **{feature}**: {impact} price by {abs(coef):.2f} units per change")
 
-    # Create a simple bar chart
-    fig, ax = plt.subplots(figsize=(10, 4))
-    bars = ax.bar(features, coefficients, color=['#FF6B6B', '#4ECDC4', '#45B7D1'])
-    ax.axhline(y=0, color='black', linestyle='-', alpha=0.3)
-    ax.set_ylabel('Impact on Price')
-    ax.set_title('How Each Feature Affects House Price')
-
-    # Add value labels on bars
-    for bar, coef in zip(bars, coefficients):
-        height = bar.get_height()
-        ax.text(bar.get_x() + bar.get_width()/2., height,
-                f'{coef:.2f}', ha='center', va='bottom' if height > 0 else 'top')
-
-    st.pyplot(fig)
-
-    # Simple explanation
-    st.write("""
-    **How to read this chart:**
-    - **Bars above zero** → Increase house price
-    - **Bars below zero** → Decrease house price  
-    - **Longer bars** → Stronger impact on price
-    """)
-
-# Add some explanations and tips
+# Footer
 st.sidebar.markdown("---")
 st.sidebar.info("""
 **💡 Tips for Accurate Predictions:**
@@ -135,10 +108,10 @@ st.sidebar.info("""
 - City center proximity adds premium
 """)
 
-# Footer
 st.markdown("---")
 st.caption("""
 This predictive model was built using Linear Regression on real estate data.
 The model considers three key location-based features that most significantly impact property values.
 """)
+
 
