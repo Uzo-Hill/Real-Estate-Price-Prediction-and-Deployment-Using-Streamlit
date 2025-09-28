@@ -66,7 +66,9 @@ if predict_button:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.metric("Predicted Price per Unit Area", f"${prediction[0]:.2f}")
+        
+        prediction_formatted = f"${prediction[0]:.0f}K"
+        st.metric("Predicted Price per Unit Area", prediction_formatted)
         st.write("**Input Summary:**")
         st.write(f"- Distance to MRT: {distance_to_mrt} meters")
         st.write(f"- Convenience Stores: {num_convenience_stores}")
@@ -176,5 +178,6 @@ st.caption("""
 The model considers three key location-based features that most significantly impact property values.
 \n*Developed by Hillary Uzoh • Data Scientist & ML Engineer*
 """)
+
 
 
