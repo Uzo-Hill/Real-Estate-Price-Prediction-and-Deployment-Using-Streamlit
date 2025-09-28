@@ -114,42 +114,67 @@ This predictive model was built using Linear Regression on real estate data.
 The model considers three key location-based features that most significantly impact property values.
 """)
 
-# Ultra-compact contact links
+# Professional Footer with Compact Contact Links
 st.markdown("---")
-st.subheader("🌐 Connect")
+st.subheader("🌐 Connect With Me")
 
+# Compact contact links - much smaller and professional
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.markdown("""<a href="mailto:uzohhillary@gmail.com" target="_blank" style="text-decoration: none;">
-    <div style="text-align: center; padding: 5px;">
-    <span style="color: #EA4335; font-size: 24px;">📨</span><br>
-    <small style="color: #333;">Email</small>
-    </div></a>""", unsafe_allow_html=True)
+    st.markdown(
+        """<a href="mailto:uzohhillary@gmail.com" target="_blank" style="text-decoration: none;">
+        <div style="text-align: center; padding: 8px; border: 1px solid #EA4335; border-radius: 5px; background-color: #f8f9fa;">
+        <span style="color: #EA4335; font-size: 20px;">📨</span><br>
+        <span style="color: #333; font-size: 12px; font-weight: 500;">Gmail</span>
+        </div></a>""", 
+        unsafe_allow_html=True
+    )
 
 with col2:
-    st.markdown("""<a href="https://github.com/Uzo-Hill" target="_blank" style="text-decoration: none;">
-    <div style="text-align: center; padding: 5px;">
-    <span style="color: #333; font-size: 24px;">💻</span><br>
-    <small style="color: #333;">GitHub</small>
-    </div></a>""", unsafe_allow_html=True)
+    st.markdown(
+        """<a href="https://github.com/Uzo-Hill" target="_blank" style="text-decoration: none;">
+        <div style="text-align: center; padding: 8px; border: 1px solid #333; border-radius: 5px; background-color: #f8f9fa;">
+        <span style="color: #333; font-size: 20px;">💻</span><br>
+        <span style="color: #333; font-size: 12px; font-weight: 500;">GitHub</span>
+        </div></a>""", 
+        unsafe_allow_html=True
+    )
 
 with col3:
-    st.markdown("""<a href="http://www.linkedin.com/in/hillaryuzoh" target="_blank" style="text-decoration: none;">
-    <div style="text-align: center; padding: 5px;">
-    <span style="color: #0077B5; font-size: 24px;">👔</span><br>
-    <small style="color: #333;">LinkedIn</small>
-    </div></a>""", unsafe_allow_html=True)
+    st.markdown(
+        """<a href="http://www.linkedin.com/in/hillaryuzoh" target="_blank" style="text-decoration: none;">
+        <div style="text-align: center; padding: 8px; border: 1px solid #0077B5; border-radius: 5px; background-color: #f8f9fa;">
+        <span style="color: #0077B5; font-size: 20px;">👔</span><br>
+        <span style="color: #333; font-size: 12px; font-weight: 500;">LinkedIn</span>
+        </div></a>""", 
+        unsafe_allow_html=True
+    )
 
 with col4:
-    st.markdown("""<a href="https://x.com/UzohHillary" target="_blank" style="text-decoration: none;">
-    <div style="text-align: center; padding: 5px;">
-    <span style="color: #000; font-size: 24px;">𝕏</span><br>
-    <small style="color: #333;">X</small>
-    </div></a>""", unsafe_allow_html=True)
+    st.markdown(
+        """<a href="https://x.com/UzohHillary" target="_blank" style="text-decoration: none;">
+        <div style="text-align: center; padding: 8px; border: 1px solid #000; border-radius: 5px; background-color: #f8f9fa;">
+        <span style="color: #000; font-size: 20px;">𝕏</span><br>
+        <span style="color: #333; font-size: 12px; font-weight: 500;">X</span>
+        </div></a>""", 
+        unsafe_allow_html=True
+    )
 
-st.markdown("""<div style="text-align: center; margin: 5px 0;">
-<small style="color: #666;">uzohhillary@gmail.com</small>
-</div>""", unsafe_allow_html=True)
+# Optional: Add a subtle line with email text
+st.markdown(
+    """<div style="text-align: center; margin-top: 10px;">
+    <small style="color: #666;">📧 uzohhillary@gmail.com</small>
+    </div>""", 
+    unsafe_allow_html=True
+)
+
+# Final footer note
+st.markdown("---")
+st.caption("""
+**About This Project:** This predictive model was built using Linear Regression on real estate data. 
+The model considers three key location-based features that most significantly impact property values.
+\n*Developed by Hillary Uzoh • Data Scientist & ML Engineer*
+""")
 
 
