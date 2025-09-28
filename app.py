@@ -114,77 +114,42 @@ This predictive model was built using Linear Regression on real estate data.
 The model considers three key location-based features that most significantly impact property values.
 """)
 
-# Professional Footer with Platform-Themed Styling
+# Ultra-compact contact links
 st.markdown("---")
-st.subheader("🌐 Connect With Me")
-
-# Custom CSS for platform-themed buttons
-st.markdown("""
-<style>
-.platform-card {
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.2s;
-}
-.platform-card:hover {
-    transform: translateY(-2px);
-}
-</style>
-""", unsafe_allow_html=True)
+st.subheader("🌐 Connect")
 
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.markdown(
-        """<div class="platform-card" style="background-color: #EA4335; color: white;">
-        <a href="mailto:uzohhillary@gmail.com" style="text-decoration: none; color: white;">
-        <h3>📨</h3>
-        <strong>Gmail</strong><br>
-        <small>uzohhillary@gmail.com</small>
-        </a></div>""", 
-        unsafe_allow_html=True
-    )
+    st.markdown("""<a href="mailto:uzohhillary@gmail.com" target="_blank" style="text-decoration: none;">
+    <div style="text-align: center; padding: 5px;">
+    <span style="color: #EA4335; font-size: 24px;">📨</span><br>
+    <small style="color: #333;">Email</small>
+    </div></a>""", unsafe_allow_html=True)
 
 with col2:
-    st.markdown(
-        """<div class="platform-card" style="background-color: #333; color: white;">
-        <a href="https://github.com/Uzo-Hill" target="_blank" style="text-decoration: none; color: white;">
-        <h3>💻</h3>
-        <strong>GitHub</strong><br>
-        <small>Uzo-Hill</small>
-        </a></div>""", 
-        unsafe_allow_html=True
-    )
+    st.markdown("""<a href="https://github.com/Uzo-Hill" target="_blank" style="text-decoration: none;">
+    <div style="text-align: center; padding: 5px;">
+    <span style="color: #333; font-size: 24px;">💻</span><br>
+    <small style="color: #333;">GitHub</small>
+    </div></a>""", unsafe_allow_html=True)
 
 with col3:
-    st.markdown(
-        """<div class="platform-card" style="background-color: #0077B5; color: white;">
-        <a href="http://www.linkedin.com/in/hillaryuzoh" target="_blank" style="text-decoration: none; color: white;">
-        <h3>👔</h3>
-        <strong>LinkedIn</strong><br>
-        <small>hillaryuzoh</small>
-        </a></div>""", 
-        unsafe_allow_html=True
-    )
+    st.markdown("""<a href="http://www.linkedin.com/in/hillaryuzoh" target="_blank" style="text-decoration: none;">
+    <div style="text-align: center; padding: 5px;">
+    <span style="color: #0077B5; font-size: 24px;">👔</span><br>
+    <small style="color: #333;">LinkedIn</small>
+    </div></a>""", unsafe_allow_html=True)
 
 with col4:
-    st.markdown(
-        """<div class="platform-card" style="background-color: #000; color: white;">
-        <a href="https://x.com/UzohHillary" target="_blank" style="text-decoration: none; color: white;">
-        <h3>𝕏</h3>
-        <strong>X</strong><br>
-        <small>UzohHillary</small>
-        </a></div>""", 
-        unsafe_allow_html=True
-    )
+    st.markdown("""<a href="https://x.com/UzohHillary" target="_blank" style="text-decoration: none;">
+    <div style="text-align: center; padding: 5px;">
+    <span style="color: #000; font-size: 24px;">𝕏</span><br>
+    <small style="color: #333;">X</small>
+    </div></a>""", unsafe_allow_html=True)
 
-# Final footer note
-st.markdown("---")
-st.caption("""
-**About This Project:** This predictive model was built using Linear Regression on real estate data. 
-The model considers three key location-based features that most significantly impact property values.
-\n*Developed by Hillary Uzoh • Data Scientist & ML Engineer*
-""")
+st.markdown("""<div style="text-align: center; margin: 5px 0;">
+<small style="color: #666;">uzohhillary@gmail.com</small>
+</div>""", unsafe_allow_html=True)
 
 
