@@ -114,19 +114,19 @@ This predictive model was built using Linear Regression on real estate data.
 The model considers three key location-based features that most significantly impact property values.
 """)
 
-# Professional Footer with Compact Contact Links
+# Professional Footer with Platform Colors
 st.markdown("---")
 st.subheader("🌐 Connect With Me")
 
-# Compact contact links - much smaller and professional
+# Contact links with proper platform colors
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     st.markdown(
         """<a href="mailto:uzohhillary@gmail.com" target="_blank" style="text-decoration: none;">
-        <div style="text-align: center; padding: 8px; border: 1px solid #EA4335; border-radius: 5px; background-color: #f8f9fa;">
-        <span style="color: #EA4335; font-size: 20px;">📨</span><br>
-        <span style="color: #333; font-size: 12px; font-weight: 500;">Gmail</span>
+        <div style="text-align: center; padding: 8px; border: 2px solid #EA4335; border-radius: 8px; background-color: #f8f9fa;">
+        <span style="color: #EA4335; font-size: 24px;">📨</span><br>
+        <span style="color: #EA4335; font-size: 12px; font-weight: 600;">Gmail</span>
         </div></a>""", 
         unsafe_allow_html=True
     )
@@ -134,9 +134,9 @@ with col1:
 with col2:
     st.markdown(
         """<a href="https://github.com/Uzo-Hill" target="_blank" style="text-decoration: none;">
-        <div style="text-align: center; padding: 8px; border: 1px solid #333; border-radius: 5px; background-color: #f8f9fa;">
-        <span style="color: #333; font-size: 20px;">💻</span><br>
-        <span style="color: #333; font-size: 12px; font-weight: 500;">GitHub</span>
+        <div style="text-align: center; padding: 8px; border: 2px solid #333; border-radius: 8px; background-color: #f8f9fa;">
+        <span style="color: #333; font-size: 24px;">💻</span><br>
+        <span style="color: #333; font-size: 12px; font-weight: 600;">GitHub</span>
         </div></a>""", 
         unsafe_allow_html=True
     )
@@ -144,9 +144,9 @@ with col2:
 with col3:
     st.markdown(
         """<a href="http://www.linkedin.com/in/hillaryuzoh" target="_blank" style="text-decoration: none;">
-        <div style="text-align: center; padding: 8px; border: 1px solid #0077B5; border-radius: 5px; background-color: #f8f9fa;">
-        <span style="color: #0077B5; font-size: 20px;">👔</span><br>
-        <span style="color: #333; font-size: 12px; font-weight: 500;">LinkedIn</span>
+        <div style="text-align: center; padding: 8px; border: 2px solid #0077B5; border-radius: 8px; background-color: #f8f9fa;">
+        <span style="color: #0077B5; font-size: 24px;">👔</span><br>
+        <span style="color: #0077B5; font-size: 12px; font-weight: 600;">LinkedIn</span>
         </div></a>""", 
         unsafe_allow_html=True
     )
@@ -154,14 +154,14 @@ with col3:
 with col4:
     st.markdown(
         """<a href="https://x.com/UzohHillary" target="_blank" style="text-decoration: none;">
-        <div style="text-align: center; padding: 8px; border: 1px solid #000; border-radius: 5px; background-color: #f8f9fa;">
-        <span style="color: #000; font-size: 20px;">𝕏</span><br>
-        <span style="color: #333; font-size: 12px; font-weight: 500;">X</span>
+        <div style="text-align: center; padding: 8px; border: 2px solid #000; border-radius: 8px; background-color: #f8f9fa;">
+        <span style="color: #000; font-size: 24px;">𝕏</span><br>
+        <span style="color: #000; font-size: 12px; font-weight: 600;">X</span>
         </div></a>""", 
         unsafe_allow_html=True
     )
 
-# Optional: Add a subtle line with email text
+# Email display
 st.markdown(
     """<div style="text-align: center; margin-top: 10px;">
     <small style="color: #666;">📧 uzohhillary@gmail.com</small>
